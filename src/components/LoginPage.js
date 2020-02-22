@@ -5,17 +5,20 @@ const LoginPage = () => {
         <>
             <h1>Login Page</h1>
             <hr />
-            <form action="" onSubmit={() => this.validateLogin}>
-                <label htmlFor="userId">Please enter your user id: </label>
-                <input type="text" id="userId"
-                    value='5495' />
-                <br />
-                <label htmlFor="userPswd">Please enter your Password: </label>
-                <input type="password" id="userPswd"
-                    value='sss' />
-                <br />
-                <br />
-                <input type="submit" value="Login" name="submit" />
+            <form action="" onSubmit={() => this.validateLogin()}>
+                <fieldset>
+                    <legend><strong>Login</strong></legend>
+                    <label htmlFor="userId">User ID: </label>
+                    <input type="text" id="userId"
+                        defaultValue='5495' />
+                    <br />
+                    <label htmlFor="userId">Password: </label>
+                    <input type="text" id="userId"
+                        defaultValue='5495' />
+                    <br />
+                    <br />
+                    <input type="submit" defaultValue="Login" name="submit" />
+                </fieldset>
             </form>
         </>
     )
