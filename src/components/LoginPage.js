@@ -1,7 +1,4 @@
 import React from 'react';
-import {
-    withRouter
-} from 'react-router-dom'
 
 export default class LoginPage extends React.Component {
     constructor(props) {
@@ -17,8 +14,8 @@ export default class LoginPage extends React.Component {
         const userId = e.target.elements.userId.value
         const paswd = e.target.elements.paswd.value
 
-        if ((userId == 5495) && (paswd == 'q123')) {
-            this.props.history.push('/welcome' + { userId })
+        if ((userId == 11) && (paswd == '123')) {
+            this.props.history.push("/NewMRO")
         } else {
             this.setState({
                 isInvalid: true

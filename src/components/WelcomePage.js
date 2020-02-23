@@ -7,8 +7,6 @@ export default class welcomePage extends React.Component {
     }
 
     render() {
-        const { userId } = this.props.match
-        console.log(userId);
         return (
             <>
                 <h1>welcome {userId}</h1>
