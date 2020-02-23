@@ -1,34 +1,37 @@
 import React from 'react';
 import LoginPage from './components/LoginPage';
-import NewMRO from './components/NewMaterialRequest';
+import WelcomePage from './components/WelcomePage';
+// import NewMRO from './components/NewMaterialRequest';
 // import DisplayMRO from './components/DisplayMaterialRequest';
-import AllMRO from './components/MROHistory';
-import Logout from './components/Logout';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+// import AllMRO from './components/MROHistory';
+// import Logout from './components/Logout';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 export default class App extends React.Component {
   render() {
 
     return (
-      <Router>
+      <BrowserRouter>
         <div>
           {/* <List todos={this.state.todos} /> */}
 
           {/* <h3>App</h3> */}
-          <nav>
+          {/* <nav>
             <Link to="/newMRO">New Material Request</Link>
             {'  ||  '}
             <Link to="/myhistory">Material Request Ordr History</Link>
             {'  ||  '}
             <Link to="/Logout">Logout</Link>
-          </nav>
-
-          <Route exact path="/" component={LoginPage} />
-          <Route path="/newMRO" component={NewMRO} />
-          <Route path="/myhistory" component={AllMRO} />
-          <Route path="/Logout" component={Logout} />
+          </nav> */}
+          <Switch>
+            <Route exact path="/" component={LoginPage} />
+            <Route path="/welcome/:userid" component={WelcomePage} />
+            <Route path="/logout" component={LoginPage} />
+            {/* <Route path="/newMRO" component={NewMRO} /> */}
+            {/* <Route path="/myhistory" component={AllMRO} /> */}
+          </Switch>
         </div>
-      </Router>
+      </BrowserRouter>
     );
   }
 }

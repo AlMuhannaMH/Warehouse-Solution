@@ -1,58 +1,53 @@
 import React from 'react';
+import {
+    withRouter
+} from 'react-router-dom'
 
 export default class LoginPage extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            // toDoItems: [
-            //     'Build a todo App',
-            //     'Go home and plan to take over the world!',
-            //     'Make a list of stuff to do',
-            //     'Have some Ice Cream! :)',
-            // ],
-            newItem: '',
+            isInvalid: false,
         };
     }
 
     validateLogin = (e) => {
         e.preventDefault();
-        console.log('Add Item!');
-        console.log(this.state.newItem);
+        const userId = e.target.elements.userId.value
+        const paswd = e.target.elements.paswd.value
 
-        this.setState({
-            newItem: ''
-        });
+        if ((userId == 5495) && (paswd == 'q123')) {
+            this.props.history.push('/welcome' + { userId })
+        } else {
+            this.setState({
+                isInvalid: true
+            });
+        }
+
     }
 
-    onTextBoxChange = (e) => {
-        console.log('On Text Change', e.target.value);
-
-        this.setState({
-            newItem: e.target.value
-        });
-    }
 
     render() {
+        const errMsg = this.state.isInvalid ? 'invald information' : ''
         return (
             <>
                 <h1>Login Page</h1>
                 <hr />
-                <form action="" onSubmit={() => this.validateLogin()}>
+
+                <form method="post" onSubmit={(e) => this.validateLogin(e)}>
                     <fieldset>
                         <legend><strong>Login</strong></legend>
+                        {errMsg}
+                        <br />
                         <label htmlFor="userId">User ID: </label>
-                        <input type="text" id="userId"
-                            Change={this.onTextBoxChange}
-                            defaultValue='5495' />
+                        <input type="text" name="userId" />
                         <br />
-                        <label htmlFor="userId">Password: </label>
-                        <input type="text" id="userId"
-                            Change={this.onTextBoxChange}
-                            defaultValue='5495' />
+                        <label htmlFor="paswd">Password: </label>
+                        <input type="password" name="paswd" />
                         <br />
                         <br />
-                        <input type="submit" defaultValue="Login" name="submit" />
+                        <input type="submit" Value="Login" name="submit" />
                     </fieldset>
                 </form>
             </>
