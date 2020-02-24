@@ -1,4 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Nav from './Nav';
+
 
 export default class LoginPage extends React.Component {
     constructor(props) {
@@ -6,6 +9,7 @@ export default class LoginPage extends React.Component {
 
         this.state = {
             isInvalid: false,
+            isLoggedIn: false
         };
     }
 
@@ -16,22 +20,23 @@ export default class LoginPage extends React.Component {
 
         if ((userId == 11) && (paswd == '123')) {
             this.props.history.push("/NewMRO")
+            this.setState({
+                isLoggedIn: !this.state.isLoggedIn
+            });
         } else {
             this.setState({
-                isInvalid: true
+                isInvalid: !this.state.isInvalid
             });
         }
-
     }
-
-
     render() {
         const errMsg = this.state.isInvalid ? 'invald information' : ''
+        let nav = this.state.isLoggedIn ? <Nav /> : <nav />
         return (
             <>
+                {nav}
                 <h1>Login Page</h1>
                 <hr />
-
                 <form method="post" onSubmit={(e) => this.validateLogin(e)}>
                     <fieldset>
                         <legend><strong>Login</strong></legend>

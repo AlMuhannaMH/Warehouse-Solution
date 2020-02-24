@@ -10,7 +10,7 @@ const Nav = () => {
                 {'  ||  '}
                 <Link to="/myhistory">Material Request Ordr History</Link>
                 {'  ||  '}
-                <Link to="/Logout">Logout</Link>
+                <Link to="/logout">Logout</Link>
             </nav>
         </div>
     )
