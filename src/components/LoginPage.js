@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Nav from './Nav';
 
 
 export default class LoginPage extends React.Component {
@@ -30,17 +29,17 @@ export default class LoginPage extends React.Component {
         }
     }
     render() {
-        const errMsg = this.state.isInvalid ? 'invald information' : ''
-        let nav = this.state.isLoggedIn ? <Nav /> : <nav />
+        // const errMsg = this.state.isInvalid ? 'invald information' : ''
+        // let nav = this.state.isLoggedIn ? <Nav /> : <nav />
         return (
             <>
-                {nav}
+                {/* {nav} */}
                 <h1>Login Page</h1>
                 <hr />
                 <form method="post" onSubmit={(e) => this.validateLogin(e)}>
                     <fieldset>
                         <legend><strong>Login</strong></legend>
-                        {errMsg}
+                        {/* {errMsg} */}
                         <br />
                         <label htmlFor="userId">User ID: </label>
                         <input type="text" name="userId" />
