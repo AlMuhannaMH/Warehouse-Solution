@@ -33,19 +33,8 @@ const Router = (props) => (
 )
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
-    <Route
-        {...rest}
-        render={props =>
-            Authentication.getAuth() ? (
-                <Component {...props} />
-            ) : (
-                    <Redirect
-                        to={{
-                            pathname: "/"
-                        }}
-                    />
-                )
-        }
+    <Route {...rest}
+        render={props => Authentication.getAuth() ? (<Component {...props} />) : (<Redirect to={{ pathname: "/" }} />)}
     />
 );
 

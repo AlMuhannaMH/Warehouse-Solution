@@ -1,7 +1,7 @@
-const Auth = {
+const Authentication = {
     isAuthenticated: false,
     authenticate() { this.isAuthenticated = true },
-    signout() { this.isAuthenticated = false },
+    logout() { this.isAuthenticated = false },
     getAuth() { return this.isAuthenticated }
 };
-export default Auth;
+export default Authentication;

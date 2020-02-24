@@ -1,12 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import Authentication from '../Authentication'
 
 class Header extends React.Component {
     constructor(props) {
         super(props);
     }
-    login() { }
-    logout() { }
+    logout = (e) => {
+        Authentication.isAuthenticated = !Authentication.isAuthenticated
+    }
     render() {
         return (
             <div>
@@ -16,10 +18,9 @@ class Header extends React.Component {
                 {'  ||  '}
                 <Link to="Help">Help</Link>
                 {'  ||  '}
-                <Link to="logout">Logout</Link>
+                <Link onClick={(e) => this.logout(e)} to="logout">Logout</Link>
                 <br />
                 <br />
-                <button onClick={this.logout}>Logout</button>
             </div>
         );
     }
