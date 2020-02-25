@@ -1,39 +1,44 @@
-import React from 'react'
-// import LoginPage from '../components/LoginPage'
-
-// Get all records where userID mache
+import React from 'react';
+// Get all records where score is 42
 // from sheet "Sheet1"
-export default class validateUser extends React.Component {
+export default class SheetsuSearchUser extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             data: [],
+            error_message: ''
         };
     }
-    // console.log(LoginPage);
 
-    componentDidMount() {
-        const url = ''
-        fetch(url)
-            .then((response) => {
-                console.log(response);
+    apiCallback() {
+        const userid = this.props.dataInfo[0]
+        const password = this.props.dataInfo[0]
+        const url = `https://sheetsu.com/apis/v1.0dt/cdc42dba4f5d/sheets/Users/search?uid=${userid}&password=${password}`;
+        fetch(url).then(response => response.json()).then(data => {
+            if (data.error) {
+                throw new Error(data.error);
+            }
+            this.setState({ data: data });
+        }).then(null, error => {
+            console.log(error);
+            this.setState({ error_message: String(error) });
 
-                return response.json()
-            }).then((json) => {
-                console.log(json);
-                this.setState({ data: json });
-            });
+        });
     }
+
     renderData() {
-        return this.state.data.map((row) =>
-            <div key={row.id}>{row.name} {row.score}</div>
-        );
+        return <div>{this.state.error_message}
+            {this.state.data.map((row) =>
+                <div key={row.uid}>{row.firstName}</div>
+            )}
+        </div>
     }
+
     render() {
         return (
             <div>
                 {this.renderData()}
             </div>
-        )
+        );
     }
 }
