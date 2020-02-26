@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
 import App from './App';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 // entry point
 ReactDOM.render(
-    <Router>
+    <HashRouter>
         <App />
-    </Router>
+    </HashRouter>
     , document.getElementById('root'));
 
 
