@@ -1,6 +1,7 @@
 import React from 'react'
 import UpdateMRO from './UpdateMRO'
 // import ListItem from './ListItem'
+// import Search from './Search'
 
 export default class MROHistory extends React.Component {
     constructor(props) {
@@ -20,22 +21,15 @@ export default class MROHistory extends React.Component {
     }
 
     render() {
-        // const allFruits = this.props.data.map(function (data, index) {
-        //     return <ListItem key={index} data={data} deleteRow={this.props.deleteRow} />;
-        // });
-        console.log(this.props.data);
-
-        const { isOpen, id } = this.state
-        const { data, deleteRow, updateRow, getMaterialById } = this.props
-
         return (
             <div>
+                {/* <Search /> */}
                 <UpdateMRO
-                    onClose={this.onClose}
-                    isOpen={isOpen}
-                    id={id}
-                    updateRow={updateRow}
-                    getMaterialById={getMaterialById}
+                    onClose={this.state.onClose}
+                    isOpen={this.state.isOpen}
+                    id={this.state.id}
+                    updateRow={this.props.updateRow}
+                    getMaterialById={this.props.getMaterialById}
                 />
                 <div>
                     <div>
@@ -46,9 +40,7 @@ export default class MROHistory extends React.Component {
                         </div>
                     </div>
                     <div>
-                        {/* {allFruits} */}
-
-                        {data.map(row => (
+                        {this.props.data.map(row => (
                             <div key={row.materialCode}>
                                 <h3>{row.materialCode}</h3>
                                 <h3>{row.quantity}</h3>
@@ -62,7 +54,7 @@ export default class MROHistory extends React.Component {
                                     <button
                                         content="Delete"
                                         onClick={() => {
-                                            deleteRow(row.materialCode)
+                                            this.props.deleteRow(row.materialCode)
                                         }}
                                     />
                                 </h3>

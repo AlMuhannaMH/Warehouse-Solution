@@ -13,7 +13,7 @@ export default class updatedMRO extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.id !== this.props.id) {
-            const user = this.props.getUserById(this.props.id)
+            const user = this.props.getMaterialById(this.props.id)
 
             this.setState({
                 form: {

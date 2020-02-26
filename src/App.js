@@ -2,6 +2,7 @@ import React from 'react';
 import Router from './Router';
 import Header from './components/Header';
 import Footer from './components/Footer';
+
 export default class App extends React.Component {
   constructor(props) {
     super(props)
@@ -41,7 +42,7 @@ export default class App extends React.Component {
     this.setState({ results })
   }
 
-  getUserById = id => {
+  getMaterialById = id => {
     const { material } = this.state
 
     const u = material.filter(user => user.materialCode === id)
@@ -71,19 +72,21 @@ export default class App extends React.Component {
     })
   }
   render() {
-    const { material, results, query } = this.state
-    const data = results.length === 0 && !query ? material : results
+    const data = this.state.results.length === 0 && !this.state.query ? this.state.material : this.state.results
     return (
       <>
         <Header />
         <Router
           data={data}
-          addRow={this.addRow}
           updateRow={this.updateRow}
           deleteRow={this.deleteRow}
-          getUserById={this.getUserById}
+          getMaterialById={this.getMaterialById}
+
+          addRow={this.addRow}
+
           value={this.state.query}
-          onChange={this.handleSearchChange} />
+          onChange={this.handleSearchChange}
+        />
         <Footer />
       </>
     )
