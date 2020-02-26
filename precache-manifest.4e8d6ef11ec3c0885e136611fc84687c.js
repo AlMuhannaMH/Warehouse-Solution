@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d4a3126cef59290c3efcbb4bdee57ce4",
+    "revision": "9c209bb79983da27b8ab5f66709edd46",
     "url": "/Warehouse-Solution/index.html"
   },
   {
-    "revision": "8a0cabe57b73c4e20439",
+    "revision": "29e82f3506c9dd502259",
     "url": "/Warehouse-Solution/static/css/main.5ecd60fb.chunk.css"
   },
   {
-    "revision": "05e95fd5c631486c90d9",
-    "url": "/Warehouse-Solution/static/js/2.21658b13.chunk.js"
+    "revision": "185a9c6667a63fc6ef8a",
+    "url": "/Warehouse-Solution/static/js/2.405e367b.chunk.js"
   },
   {
     "revision": "928d7b5eb39d16fe9a880722c974b51e",
-    "url": "/Warehouse-Solution/static/js/2.21658b13.chunk.js.LICENSE.txt"
+    "url": "/Warehouse-Solution/static/js/2.405e367b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8a0cabe57b73c4e20439",
-    "url": "/Warehouse-Solution/static/js/main.a9063a93.chunk.js"
+    "revision": "29e82f3506c9dd502259",
+    "url": "/Warehouse-Solution/static/js/main.e8152e36.chunk.js"
   },
   {
     "revision": "cdae39d327a2c10899c3",
