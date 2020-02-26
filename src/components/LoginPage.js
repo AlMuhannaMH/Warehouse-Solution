@@ -1,5 +1,5 @@
 import React from "react";
-import Authentication from '../Authentication'
+import Authentication from '../auth/Authentication'
 import validateUser from '../api/validateUser'
 import { withRouter } from 'react-router-dom';
 class LoginPage extends React.Component {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Authentication from '../Authentication'
+import Authentication from '../auth/Authentication'
 //useHistory 
 export default class Header extends React.Component {
     logout = (e) => {

@@ -5,7 +5,7 @@ import NewMRO from './components/NewMaterialRequest';
 import ShowMRO from './components/DisplayMaterialRequest';
 import AllMRO from './components/MROHistory';
 import Help from './components/Help';
-import Authentication from './Authentication';
+import Authentication from './auth/Authentication';
 import Search from './components/Search'
 
 export default class Router extends React.Component {
@@ -40,10 +40,6 @@ export default class Router extends React.Component {
                                 getMaterialById={this.props.getMaterialById}
                             />
                         </>} />
-                {/* <Route
-                    path="/myhistory"
-                    component={() => <Search
-                    />} /> */}
                 <PrivateRoute
                     path="/myhistory"
                     component={ShowMRO} />
