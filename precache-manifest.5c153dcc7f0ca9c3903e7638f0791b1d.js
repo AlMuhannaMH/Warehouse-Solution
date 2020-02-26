@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b403e715fccfb2d89881d722f8898f0b",
+    "revision": "323180037cbc077c3c3edac2ff56703b",
     "url": "/Warehouse-Solution/index.html"
   },
   {
-    "revision": "e3806108dace66ebdddd",
+    "revision": "b79c04cf47e2debff936",
     "url": "/Warehouse-Solution/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Warehouse-Solution/static/js/2.d05ffa3b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e3806108dace66ebdddd",
-    "url": "/Warehouse-Solution/static/js/main.9eb4ff23.chunk.js"
+    "revision": "b79c04cf47e2debff936",
+    "url": "/Warehouse-Solution/static/js/main.b205881d.chunk.js"
   },
   {
     "revision": "cdae39d327a2c10899c3",
