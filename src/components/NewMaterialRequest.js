@@ -1,31 +1,70 @@
 import React from 'react'
 
-const NewMaterialRequest = () => {
-    return (
-        <>
+export default class NewMaterialRequest extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            form: {
+                materialCode: '',
+                quantity: '',
+            },
+        }
+    }
 
-            <h1>NewMaterialRequest Page</h1>
-            <hr />
-            <form action="" onSubmit={() => this.validateMRO()}>
-                <fieldset>
-                    <legend><strong>Create New Material Request</strong></legend>
-                    <label htmlFor="materialCode">Enter Material Code: </label>
-                    <input type="text" id="mrCode" defaultValue='MR-01233' />
-                    <select name="MROption">
-                        <option defaultValue="MR-01233">MR-01233 - Blue Pen</option>
-                        <option defaultValue="MR-01234">MR-01234 - Red Pen</option>
-                        <option defaultValue="MR-01235">MR-01235 - Black Pen</option>
-                    </select>
-                    <br />
-                    <label htmlFor="countite">Enter countite requested: </label>
-                    <input type="text" id="mrCountite" defaultValue='1' />
-                    <br />
-                    <br />
-                    <input type="submit" defaultValue="MRO" name="submit" />
-                </fieldset>
-            </form>
-        </>
-    )
+    handleChange = event => {
+        const { name, value } = event.target
+
+        this.setState({
+            form: { ...this.state.form, [name]: value },
+        })
+    }
+
+    handleSubmit = event => {
+        event.preventDefault()
+
+        const { materialCode, quantity } = this.state.form
+        const { addRow } = this.props
+
+        const newUser = {
+            materialCode,
+            quantity,
+        }
+
+        addRow(newUser)
+        this.setState(this.state)
+    }
+
+    render() {
+        const { materialCode, quantity } = this.state.form
+
+        return (
+            <div>
+                <h1>Create New Material Request</h1>
+                <div>
+                    <form onSubmit={this.handleSubmit}>
+                        <div>
+                            <label>materialCode</label>
+                            <input
+                                label="materialCode"
+                                name="materialCode"
+                                value={materialCode}
+                                onChange={this.handleChange}
+                                autoFocus={true}
+                            />
+                        </div>
+                        <div>
+                            <label>quantity</label>
+                            <input
+                                label="quantity"
+                                name="quantity"
+                                value={quantity}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+                        <button type="submit" content="Submit" disabled={!materialCode || !quantity} />
+                    </form>
+                </div>
+            </div>
+        )
+    }
 }
-
-export default NewMaterialRequest

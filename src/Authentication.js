@@ -1,5 +1,5 @@
 const Authentication = {
-    isAuthenticated: true,
+    isAuthenticated: false,
     authenticate() { this.isAuthenticated = true },
     logout() { this.isAuthenticated = false },
     getAuth() { return this.isAuthenticated }

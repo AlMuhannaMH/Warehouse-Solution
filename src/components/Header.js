@@ -1,9 +1,11 @@
 import React from 'react';
-// import { Link, useHistory } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Authentication from '../Authentication'
 
 class Header extends React.Component {
+    constructor(props) {
+        super(props);
+    }
     logout = (e) => {
         Authentication.isAuthenticated = !Authentication.isAuthenticated
     }
@@ -13,8 +15,6 @@ class Header extends React.Component {
                 <Link to="newMRO">New Material Request</Link>
                 {'  ||  '}
                 <Link to="myhistory">Material Request Ordr History</Link>
-                {'  ||  '}
-                <Link to="CreateMaterial">Create Material</Link>
                 {'  ||  '}
                 <Link to="Help">Help</Link>
                 {'  ||  '}
