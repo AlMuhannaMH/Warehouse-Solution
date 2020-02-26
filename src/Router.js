@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import LoginPage from './components/LoginPage';
 import NewMRO from './components/NewMaterialRequest';
-import ShowMRO from './components/DisplayMaterialRequest';
+// import ShowMRO from './components/DisplayMaterialRequest';
 import AllMRO from './components/MROHistory';
 import Help from './components/Help';
 import Authentication from './auth/Authentication';
@@ -40,9 +40,9 @@ export default class Router extends React.Component {
                                 getMaterialById={this.props.getMaterialById}
                             />
                         </>} />
-                <PrivateRoute
+                {/* <PrivateRoute
                     path="/myhistory"
-                    component={ShowMRO} />
+                    component={ShowMRO} /> */}
                 <Route
                     path="/Help"
                     component={Help} />

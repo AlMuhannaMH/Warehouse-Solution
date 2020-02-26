@@ -4,66 +4,63 @@ class NewMaterialRequest extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            form: {
-                materialCode: '',
-                quantity: '',
-            },
+            form: { userId: 1, id: '', title: '', body: '', },
         }
     }
 
-    handleChange = event => {
+    handleUserChange = event => {
         const { name, value } = event.target
-
         this.setState({
             form: { ...this.state.form, [name]: value },
         })
     }
 
-    handleSubmit = event => {
+    handleUserSubmit = event => {
         event.preventDefault()
-
-        const { materialCode, quantity } = this.state.form
+        const { id, title, body, } = this.state.form
         const { addRow } = this.props
-
-        const newUser = {
-            materialCode,
-            quantity,
-        }
-
+        const newUser = { userId: 1, id, title, body, }
         addRow(newUser)
         this.setState(this.state)
-
         this.props.history.push("/myhistory")
     }
 
     render() {
-        const { materialCode, quantity } = this.state.form
-
+        const { id, title, body } = this.state.form
         return (
             <div>
                 <h1>Create New Material Request</h1>
                 <div>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleUserSubmit}>
                         <div>
-                            <label>materialCode</label>
+                            <label>title</label>
                             <input
-                                label="materialCode"
-                                name="materialCode"
-                                value={materialCode}
-                                onChange={this.handleChange}
+                                label="title"
+                                name="title"
+                                value={title}
+                                onChange={this.handleUserChange}
                                 autoFocus={true}
+                            />
+                        </div>
+                        <div>
+                            <label>body</label>
+                            <input
+                                label="body"
+                                name="body"
+                                value={body}
+                                onChange={this.handleUserChange}
                             />
                         </div>
                         <div>
                             <label>quantity</label>
                             <input
-                                label="quantity"
-                                name="quantity"
-                                value={quantity}
-                                onChange={this.handleChange}
+                                label="id"
+                                name="id"
+                                value={id}
+                                onChange={this.handleUserChange}
                             />
                         </div>
-                        <button type="submit" content="Submit" disabled={!materialCode || !quantity} />
+                        <button type="submit" content="Submit" disabled={!title || !body || !id} />
                     </form>
                 </div>
             </div>

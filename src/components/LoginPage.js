@@ -18,8 +18,7 @@ class LoginPage extends React.Component {
         const paswd = e.target.elements.paswd.value
         console.log(validateUser);
 
-        if ((userId == 11) && (paswd == '123')) {
-            // this.props.apiCall()
+        if ((parseInt(userId) === 5495) && (paswd === '123')) {
             this.props.history.push("/NewMRO")
             Authentication.isAuthenticated = !Authentication.isAuthenticated
         } else {

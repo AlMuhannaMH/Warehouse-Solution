@@ -13,7 +13,7 @@ export default class Header extends React.Component {
                 {'  ||  '}
                 <Link to="myhistory">Material Request Ordr History</Link>
                 {'  ||  '}
-                <Link to="Help">Help</Link>
+                <Link to="Help">Help?</Link>
                 {'  ||  '}
                 <Link onClick={(e) => this.logout(e)} to="logout">Logout</Link>
                 <br />
