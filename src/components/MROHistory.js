@@ -1,7 +1,5 @@
 import React from 'react'
 import UpdateMRO from './UpdateMRO'
-// import ListItem from './ListItem'
-// import Search from './Search'
 
 export default class MROHistory extends React.Component {
     constructor(props) {
@@ -23,9 +21,8 @@ export default class MROHistory extends React.Component {
     render() {
         return (
             <div>
-                {/* <Search /> */}
                 <UpdateMRO
-                    onClose={this.state.onClose}
+                    onClose={this.onClose}
                     isOpen={this.state.isOpen}
                     id={this.state.id}
                     updateRow={this.props.updateRow}

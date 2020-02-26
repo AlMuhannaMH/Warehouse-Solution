@@ -19,14 +19,13 @@ export default class Router extends React.Component {
             <Switch>
                 <Route
                     exact path="/"
-                    component={LoginPage} />
+                    component={() => <LoginPage />} />
+                <Route
+                    path="/logout"
+                    component={() => <LoginPage />} />
                 <PrivateRoute
                     path="/NewMRO"
                     component={() => <NewMRO addRow={this.props.addRow} />} />
-                <Route
-                    path="/logout"
-                    component={LoginPage} />
-
                 <PrivateRoute
                     path="/myhistory"
                     component={() =>
@@ -38,7 +37,7 @@ export default class Router extends React.Component {
                                 data={this.props.data}
                                 deleteRow={this.props.deleteRow}
                                 updateRow={this.props.updateRow}
-                                getUserById={this.props.getUserById}
+                                getMaterialById={this.props.getMaterialById}
                             />
                         </>} />
                 {/* <Route

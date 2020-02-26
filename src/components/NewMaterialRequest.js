@@ -1,6 +1,6 @@
 import React from 'react'
-
-export default class NewMaterialRequest extends React.Component {
+import { withRouter } from 'react-router-dom';
+class NewMaterialRequest extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -32,6 +32,8 @@ export default class NewMaterialRequest extends React.Component {
 
         addRow(newUser)
         this.setState(this.state)
+
+        this.props.history.push("/myhistory")
     }
 
     render() {
@@ -68,3 +70,5 @@ export default class NewMaterialRequest extends React.Component {
         )
     }
 }
+
+export default withRouter(NewMaterialRequest)

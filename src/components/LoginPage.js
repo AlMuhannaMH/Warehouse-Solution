@@ -1,7 +1,8 @@
 import React from "react";
 import Authentication from '../Authentication'
 import validateUser from '../api/validateUser'
-export default class LoginPage extends React.Component {
+import { withRouter } from 'react-router-dom';
+class LoginPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -18,6 +19,7 @@ export default class LoginPage extends React.Component {
         console.log(validateUser);
 
         if ((userId == 11) && (paswd == '123')) {
+            // this.props.apiCall()
             this.props.history.push("/NewMRO")
             Authentication.isAuthenticated = !Authentication.isAuthenticated
         } else {
@@ -44,10 +46,12 @@ export default class LoginPage extends React.Component {
                         <input type="password" name="paswd" />
                         <br />
                         <br />
-                        <input type="submit" Value="Login" name="submit" />
+                        <input type="submit" value="Login" name="submit" />
                     </fieldset>
                 </form>
             </>
         );
     }
 }
+
+export default withRouter(LoginPage);
