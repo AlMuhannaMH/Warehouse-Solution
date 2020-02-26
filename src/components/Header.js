@@ -1,11 +1,8 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Authentication from '../Authentication'
-
-class Header extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+//useHistory 
+export default class Header extends React.Component {
     logout = (e) => {
         Authentication.isAuthenticated = !Authentication.isAuthenticated
     }
@@ -16,6 +13,8 @@ class Header extends React.Component {
                 {'  ||  '}
                 <Link to="myhistory">Material Request Ordr History</Link>
                 {'  ||  '}
+                <Link to="UpdateMRO">Update Material Request Order</Link>
+                {'  ||  '}
                 <Link to="Help">Help</Link>
                 {'  ||  '}
                 <Link onClick={(e) => this.logout(e)} to="logout">Logout</Link>
@@ -25,4 +24,3 @@ class Header extends React.Component {
         );
     }
 }
-export default Header;

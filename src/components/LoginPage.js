@@ -32,7 +32,7 @@ export default class LoginPage extends React.Component {
             <>
                 <h1>Login Page</h1>
                 <hr />
-                <form method="post" onSubmit={(e) => this.validateLogin(e)}>
+                <form onSubmit={(e) => this.validateLogin(e)}>
                     <fieldset>
                         <legend><strong>Login</strong></legend>
                         {errMsg}
