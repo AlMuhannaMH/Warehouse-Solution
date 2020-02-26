@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Warehouse-Solution/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/Warehouse-Solution/static/js/main.a9063a93.chunk.js",
+    "main.js.map": "/Warehouse-Solution/static/js/main.a9063a93.chunk.js.map",
+    "runtime-main.js": "/Warehouse-Solution/static/js/runtime-main.e9af03ca.js",
+    "runtime-main.js.map": "/Warehouse-Solution/static/js/runtime-main.e9af03ca.js.map",
+    "static/js/2.21658b13.chunk.js": "/Warehouse-Solution/static/js/2.21658b13.chunk.js",
+    "static/js/2.21658b13.chunk.js.map": "/Warehouse-Solution/static/js/2.21658b13.chunk.js.map",
+    "index.html": "/Warehouse-Solution/index.html",
+    "precache-manifest.16e6c1525b09196726877b88b7910668.js": "/Warehouse-Solution/precache-manifest.16e6c1525b09196726877b88b7910668.js",
+    "service-worker.js": "/Warehouse-Solution/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/Warehouse-Solution/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.21658b13.chunk.js.LICENSE.txt": "/Warehouse-Solution/static/js/2.21658b13.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e9af03ca.js",
+    "static/js/2.21658b13.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.a9063a93.chunk.js"
+  ]
+}
