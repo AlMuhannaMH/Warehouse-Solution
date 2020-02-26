@@ -1,19 +1,15 @@
-import React from 'react'
-
 const APICall = () => {
-    console.log('getAllPosts');
-    axios({
-        method: 'get',
-        url: 'http://10.51.1.23:5000/posts'
-    })
-        .then(res => {
-            console.log('RESPONSE: ', res);
-            console.log('DATA: ', res.data);
-            this.setState({ posts: res.data });
-        })
-        .catch(err => {
-            console.log('ERROR: ', err);
-        });
+    const url = 'https://jsonplaceholder.typicode.com/posts?userId=1';
+    fetch(url).then(response => response.json()).then(data => {
+        if (data.error_message) {
+            throw new Error(data.error_message);
+        }
+        console.log('DATA: ', data);
+        this.setState({ material: data.slice(0, 5) });
+    }).then(null, error => {
+        console.log(String(error))
+        console.log(error)
+    });
 };
 
 export default APICall

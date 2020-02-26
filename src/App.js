@@ -7,15 +7,6 @@ export default class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      // "userId": 1,
-      // "id": 1,
-      // "title": ''
-      // "body":'' 
-      // material: [
-      //   { id: 'Tania', title: 'floppydiskette', body: 'floppydiskette' },
-      //   { id: 'Timm', quantity: 'zeitgeist' },
-      //   { id: 'Craig', quantity: 'siliconeidolon' },
-      // ],
       material: [],
       results: [],
       query: '',

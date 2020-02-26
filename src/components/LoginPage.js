@@ -1,7 +1,7 @@
 import React from "react";
 import Authentication from '../auth/Authentication'
-import validateUser from '../api/validateUser'
 import { withRouter } from 'react-router-dom';
+import Badge from 'react-bootstrap/Badge'
 class LoginPage extends React.Component {
     constructor(props) {
         super(props)
@@ -16,7 +16,6 @@ class LoginPage extends React.Component {
         e.preventDefault();
         const userId = e.target.elements.userId.value
         const paswd = e.target.elements.paswd.value
-        console.log(validateUser);
 
         if ((parseInt(userId) === 5495) && (paswd === '123')) {
             this.props.history.push("/NewMRO")
@@ -31,11 +30,13 @@ class LoginPage extends React.Component {
         let errMsg = this.state.isInvalid ? 'wrong information' : ''
         return (
             <>
-                <h1>Login Page</h1>
+                <h1>
+                    Welcome to the Warehouse solution
+                </h1>
                 <hr />
                 <form onSubmit={(e) => this.validateLogin(e)}>
                     <fieldset>
-                        <legend><strong>Login</strong></legend>
+                        <legend><strong><h1><Badge variant="secondary">Login</Badge></h1></strong></legend>
                         {errMsg}
                         <br />
                         <label htmlFor="userId">User ID: </label>
