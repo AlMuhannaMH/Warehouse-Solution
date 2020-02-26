@@ -8,37 +8,37 @@ export default class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      // material: [
-      //   { materialCode: 'Tania', quantity: 'floppydiskette' },
-      //   { materialCode: 'Timm', quantity: 'zeitgeist' },
-      //   { materialCode: 'Craig', quantity: 'siliconeidolon' },
-      // ],
-      material: [],
+      material: [
+        { materialCode: 'Tania', quantity: 'floppydiskette' },
+        { materialCode: 'Timm', quantity: 'zeitgeist' },
+        { materialCode: 'Craig', quantity: 'siliconeidolon' },
+      ],
+      // material: [],
       results: [],
       query: '',
     }
   }
-  componentDidMount() {
-    // Will return all the posts that belong to the first user
-    fetch('https://jsonplaceholder.typicode.com/posts?userId=1')
-      .then(response => response.json())
-      .then(json => {
-        console.log(json)
-        console.log(json)
-      })
+  // componentDidMount() {
+  //   // Will return all the posts that belong to the first user
+  //   fetch('https://jsonplaceholder.typicode.com/posts?userId=1')
+  //     .then(response => response.json())
+  //     .then(json => {
+  //       console.log(json)
+  //       console.log(json)
+  //     })
 
-    // const url = 'https://jsonplaceholder.typicode.com/posts?userId=1';
-    // fetch(url).then(response => response.json()).then(data => {
-    //   if (data.error_message) {
-    //     throw new Error(data.error_message);
-    //   }
-    //   console.log('DATA: ', data);
-    //   this.setState({ material: data });
-    // }).then(null, error => {
-    //   console.log(String(error))
-    //   console.log(error)
-    // });
-  }
+  //   // const url = 'https://jsonplaceholder.typicode.com/posts?userId=1';
+  //   // fetch(url).then(response => response.json()).then(data => {
+  //   //   if (data.error_message) {
+  //   //     throw new Error(data.error_message);
+  //   //   }
+  //   //   console.log('DATA: ', data);
+  //   //   this.setState({ material: data });
+  //   // }).then(null, error => {
+  //   //   console.log(String(error))
+  //   //   console.log(error)
+  //   // });
+  // }
   // apiCall = () => {
   //   console.log("dfgdfgfdgdgfdfgdfgdfgfd")
   // }

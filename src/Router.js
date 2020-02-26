@@ -18,16 +18,16 @@ export default class Router extends React.Component {
         return (
             <Switch>
                 <Route
-                    exact path="/"
+                    exact path="/Warehouse-Solution/"
                     component={() => <LoginPage />} />
                 <Route
-                    path="/logout"
+                    path="/Warehouse-Solution/logout"
                     component={() => <LoginPage />} />
                 <PrivateRoute
-                    path="/NewMRO"
+                    path="/Warehouse-Solution/NewMRO"
                     component={() => <NewMRO addRow={this.props.addRow} />} />
                 <PrivateRoute
-                    path="/myhistory"
+                    path="/Warehouse-Solution/myhistory"
                     component={() =>
                         <>
                             <Search
@@ -45,10 +45,10 @@ export default class Router extends React.Component {
                     component={() => <Search
                     />} /> */}
                 <PrivateRoute
-                    path="/myhistory"
+                    path="/Warehouse-Solution/myhistory"
                     component={ShowMRO} />
                 <Route
-                    path="/Help"
+                    path="/Warehouse-Solution/Help"
                     component={Help} />
             </Switch>
         );
