@@ -21,29 +21,19 @@ export default class App extends React.Component {
       query: '',
     }
   }
-  // componentDidMount() {
-  //   //    https://jsonplaceholder.typicode.com/posts?userId=1
-  //   // Will return all the posts that belong to the first user
-  //   fetch('https://jsonplaceholder.typicode.com/posts?userId=1')
-  //     .then(response => response.json())
-  //     .then(json => {
-  //       console.log(json);
-  //       this.setState({ material: json }
-  //       )
-  //     })
-
-  //   // const url = 'https://jsonplaceholder.typicode.com/posts?userId=1';
-  //   // fetch(url).then(response => response.json()).then(data => {
-  //   //   if (data.error_message) {
-  //   //     throw new Error(data.error_message);
-  //   //   }
-  //   //   console.log('DATA: ', data);
-  //   //   this.setState({ material: data });
-  //   // }).then(null, error => {
-  //   //   console.log(String(error))
-  //   //   console.log(error)
-  //   // });
-  // }
+  componentDidMount() {
+    const url = 'https://jsonplaceholder.typicode.com/posts?userId=1';
+    fetch(url).then(response => response.json()).then(data => {
+      if (data.error_message) {
+        throw new Error(data.error_message);
+      }
+      console.log('DATA: ', data);
+      this.setState({ material: data.slice(0, 5) });
+    }).then(null, error => {
+      console.log(String(error))
+      console.log(error)
+    });
+  }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.material !== this.state.material) {
@@ -53,7 +43,7 @@ export default class App extends React.Component {
 
   handleSearchChange = event => {
     const value = event.target.value;
-    const results = this.state.material.filter(m => m.id.toLowerCase().includes(value.toLowerCase()))
+    const results = this.state.material.filter(m => m.title.toLowerCase().includes(value.toLowerCase()))
     this.setState({
       query: value,
       results: results,
@@ -62,7 +52,7 @@ export default class App extends React.Component {
   }
 
   resetSearch = () => {
-    const results = this.state.material.filter(m => m.id.toLowerCase().includes(this.state.query.toLowerCase()))
+    const results = this.state.material.filter(m => m.title.toLowerCase().includes(this.state.query.toLowerCase()))
     this.setState({ results })
   }
 
@@ -73,8 +63,7 @@ export default class App extends React.Component {
   }
 
   addRow = user => {
-    const { material } = this.state
-    this.setState({ material: [...material, user] })
+    this.setState({ material: [...this.state.material, user] })
   }
 
   updateRow = (id, updatedUser) => {
