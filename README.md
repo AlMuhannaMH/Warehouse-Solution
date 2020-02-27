@@ -1,3 +1,64 @@
+# TicTacToeGame
+
+## Overview
+
+This application allows the company's users to request for their material from the warehouse.
+
+---
+
+### User Stories
+
+* The application allows recording material request order data.
+* The application allows the user to create a new material request once complete the form successfully.
+* The application allows users to update or cancel a request.
+* The application allows the user to view the history of his/her request.
+* the application allows the user to search for a request.
+
+---
+
+### Technologies used in the Project
+
+- VS Code
+- React JS
+- react-bootstrap
+- react-router-dom
+- Firefox Browser Developer Edition.
+- GitHub.
+- JSONPlaceholder API
+
+---
+
+### Wireframes
+
+Tha first plan of the ui for the project.
+
+![UI1](images\Wireframes01.jpg)
+
+The next phase was to improve it to look like the actual output will be delivered.
+
+![UI2](images\Wireframes01.jpg)
+
+The final result.
+
+![UI3](images\Wireframes01.jpg)
+
+The design is responsive to mobile devices also.
+
+![UI4](images\Wireframes01.jpg)
+
+
+---
+
+## Resources
+
+- **[React](https://reactjs.org/)**
+- **[React Bootstrap](https://react-bootstrap.github.io/)**
+- **[JSONPlaceholder API](https://jsonplaceholder.typicode.com/)**
+- **[GitHub Pages](https://pages.github.com)**
+
+---
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

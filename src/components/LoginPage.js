@@ -8,8 +8,8 @@ class LoginPage extends React.Component {
         super(props)
         this.state = {
             isInvalid: false,
-            userId: 0,
-            paswd: ''
+            // userId: 0,
+            // paswd: ''
         }
     }
 

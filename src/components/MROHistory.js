@@ -31,7 +31,7 @@ export default class MROHistory extends React.Component {
                 />
                 <hr />
                 <div>
-                    <h1><Badge variant="secondary">Update Material Request Order</Badge></h1>
+                    <h1><Badge variant="secondary">Material Request Ordr History</Badge></h1>
                     {this.props.data.map(row => (
                         <Card className="text-left" key={row.id} style={{ width: '100%' }}>
                             <Card.Body>

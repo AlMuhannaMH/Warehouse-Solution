@@ -9,7 +9,6 @@ export default class Search extends React.Component {
                     value={this.props.value}
                     onChange={this.props.onChange}
                     placeholder="Search" />
-
             </div>
         );
     }
