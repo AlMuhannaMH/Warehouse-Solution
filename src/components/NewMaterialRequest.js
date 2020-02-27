@@ -62,7 +62,7 @@ class NewMaterialRequest extends React.Component {
                                     value={id}
                                     onChange={this.handleUserChange} />
                             </Form.Group>
-                            <Button type="submit" content="Submit" disabled={!title || !body || !id} variant="dark">Create</Button>
+                            <Button type="submit" content="Submit" disabled={!title || !body || !id} variant="dark" >Create</Button>
                         </Form>
                     </Col>
                 </Row>

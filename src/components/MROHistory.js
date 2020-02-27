@@ -1,5 +1,6 @@
 import React from 'react'
 import UpdateMRO from './UpdateMRO'
+import { Button, Card, Badge } from 'react-bootstrap'
 
 export default class MROHistory extends React.Component {
     constructor(props) {
@@ -28,40 +29,28 @@ export default class MROHistory extends React.Component {
                     updateRow={this.props.updateRow}
                     getMaterialById={this.props.getMaterialById}
                 />
+                <hr />
                 <div>
-                    <div>
-                        <div>
+                    <h1><Badge variant="secondary">Update Material Request Order</Badge></h1>
+                    {this.props.data.map(row => (
+                        <Card className="text-left" key={row.id} style={{ width: '100%' }}>
+                            <Card.Body>
+                                <Card.Title>Material Code: {row.title}</Card.Title>
+                                <Card.Subtitle className="mb-2 text-muted">Quantity: {row.id}</Card.Subtitle>
+                                <Card.Text>Description: {row.body}</Card.Text>
 
-                            <h1>title</h1>
-                            <h1>body</h1>
-                            <h1>quantity</h1>
-                            <h1>Actions</h1>
-                        </div>
-                    </div>
-                    <div>
-                        {this.props.data.map(row => (
-
-                            <div key={row.id}>
-                                <h3>{row.title}</h3>
-                                <h3>{row.body}</h3>
-                                <h3>{row.id}</h3>
-                                <h3>
-                                    <button
-                                        content="Edit"
-                                        onClick={() => {
-                                            this.setState({ isOpen: true, id: row.id })
-                                        }}
-                                    />
-                                    <button
-                                        content="Delete"
-                                        onClick={() => {
-                                            this.props.deleteRow(row.id)
-                                        }}
-                                    />
-                                </h3>
-                            </div>
-                        ))}
-                    </div>
+                                <Button content="Edit"
+                                    onClick={() => {
+                                        this.setState({ isOpen: true, id: row.id })
+                                    }} variant="dark">Edit</Button>
+                                {' '}
+                                <Button content="Delete"
+                                    onClick={() => {
+                                        this.props.deleteRow(row.id)
+                                    }} variant="dark">Delete</Button>
+                            </Card.Body>
+                        </Card>
+                    ))}
                 </div>
             </div>
         )
