@@ -1,7 +1,8 @@
 import React from "react";
 import Authentication from '../auth/Authentication'
 import { withRouter } from 'react-router-dom';
-import Badge from 'react-bootstrap/Badge'
+import { Container, Row, Col, Form, Badge, Button } from 'react-bootstrap'
+
 class LoginPage extends React.Component {
     constructor(props) {
         super(props)
@@ -29,29 +30,32 @@ class LoginPage extends React.Component {
     render() {
         let errMsg = this.state.isInvalid ? 'wrong information' : ''
         return (
-            <>
-                <h1>
-                    Welcome to the Warehouse solution
-                </h1>
-                <hr />
-                <form onSubmit={(e) => this.validateLogin(e)}>
-                    <fieldset>
-                        <legend><strong><h1><Badge variant="secondary">Login</Badge></h1></strong></legend>
-                        {errMsg}
-                        <br />
-                        <label htmlFor="userId">User ID: </label>
-                        <input type="text" name="userId" />
-                        <br />
-                        <label htmlFor="paswd">Password: </label>
-                        <input type="password" name="paswd" />
-                        <br />
-                        <br />
-                        <input type="submit" value="Login" name="submit" />
-                    </fieldset>
-                </form>
-            </>
+            <Container>
+                <Row>
+                    <Col md={{ span: 6, offset: 3 }}>
+                        <h1><Badge variant="secondary">Login Page</Badge></h1>
+                        <br /><br />{errMsg}<br /><br />
+                        <Form onSubmit={(e) => this.validateLogin(e)}>
+                            <Form.Group controlId="formBasicUserID" >
+                                <Form.Label>User ID</Form.Label>
+                                <Form.Control type="text" placeholder="Enter your id" name="userId" />
+                                <Form.Text className="text-muted">We'll never share your information with anyone else.</Form.Text>
+                            </Form.Group>
+
+                            <Form.Group controlId="formBasicPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" placeholder="Password" name="paswd" />
+                            </Form.Group>
+                            <Button type="submit" value="Login" name="submit" variant="dark">Login</Button>
+                        </Form>
+                    </Col>
+                </Row>
+            </Container>
         );
     }
 }
+
+
+
 
 export default withRouter(LoginPage);

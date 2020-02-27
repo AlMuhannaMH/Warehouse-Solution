@@ -12,19 +12,19 @@ export default class App extends React.Component {
       query: '',
     }
   }
-  componentDidMount() {
-    const url = 'https://jsonplaceholder.typicode.com/posts?userId=1';
-    fetch(url).then(response => response.json()).then(data => {
-      if (data.error_message) {
-        throw new Error(data.error_message);
-      }
-      console.log('DATA: ', data);
-      this.setState({ material: data.slice(0, 5) });
-    }).then(null, error => {
-      console.log(String(error))
-      console.log(error)
-    });
-  }
+  // componentDidMount() {
+  //   const url = 'https://jsonplaceholder.typicode.com/posts?userId=1';
+  //   fetch(url).then(response => response.json()).then(data => {
+  //     if (data.error_message) {
+  //       throw new Error(data.error_message);
+  //     }
+  //     console.log('DATA: ', data);
+  //     this.setState({ material: data.slice(0, 5) });
+  //   }).then(null, error => {
+  //     // console.log(String(error))
+  //     console.log(error)
+  //   });
+  // }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.material !== this.state.material) {
@@ -53,7 +53,7 @@ export default class App extends React.Component {
     return u[0]
   }
 
-  addRow = user => {
+  handleNewRow = user => {
     this.setState({ material: [...this.state.material, user] })
   }
 
@@ -81,7 +81,7 @@ export default class App extends React.Component {
           updateRow={this.updateRow}
           deleteRow={this.deleteRow}
           getMaterialById={this.getMaterialById}
-          addRow={this.addRow}
+          handleNewRow={this.handleNewRow}
           value={this.state.query}
           onChange={this.handleSearchChange}
         />

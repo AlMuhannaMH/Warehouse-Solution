@@ -10,7 +10,7 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
     <Router>
         <HashRouter>
-            <Container>
+            <Container className="text-center">
                 <Row>
                     <Col md={{ span: 11, offset: 0 }}><App /></Col>
                 </Row>

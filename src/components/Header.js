@@ -11,6 +11,11 @@ export default class Header extends React.Component {
     render() {
         return (
             <div>
+                <h1>
+                    Welcome to the Warehouse solution
+                </h1>
+                <hr />
+                <br />
                 <Nav justify variant="tabs" defaultActiveKey="/home">
                     <Nav.Item>
                         <Nav.Link> <Link to="newMRO">New Material Request</Link> </Nav.Link>
@@ -25,6 +30,8 @@ export default class Header extends React.Component {
                         <Nav.Link>    <Link onClick={(e) => this.logout(e)} to="logout">Logout</Link></Nav.Link>
                     </Nav.Item>
                 </Nav>
+                <br />
+                <br />
             </div>
         );
     }

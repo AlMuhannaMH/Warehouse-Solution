@@ -25,7 +25,7 @@ export default class Router extends React.Component {
                     component={() => <LoginPage />} />
                 <PrivateRoute
                     path="/NewMRO"
-                    component={() => <NewMRO addRow={this.props.addRow} />} />
+                    component={() => <NewMRO handleNewRow={this.props.handleNewRow} />} />
                 <PrivateRoute
                     path="/myhistory"
                     component={() =>
