@@ -1,4 +1,4 @@
-# TicTacToeGame
+# Warehouse-Solution
 
 ## Overview
 
@@ -30,22 +30,35 @@ This application allows the company's users to request for their material from t
 
 ### Wireframes
 
-Tha first plan of the ui for the project.
+The first wireframes plan as well as the some of logic that the project has.
 
-![UI1](images\Wireframes01.jpg)
+<p align="center">
+  <img alt="UI1" src="https://github.com/AlMuhannaMH/Warehouse-Solution/blob/master/src/images/Wireframes01.jpg">
+</p>
 
-The next phase was to improve it to look like the actual output will be delivered.
+The login UI.
 
-![UI2](images\Wireframes01.jpg)
+<p align="center">
+  <img alt="UI2" src="https://github.com/AlMuhannaMH/Warehouse-Solution/blob/master/src/images/UI01.png">
+</p>
 
-The final result.
+The new material request UI.
 
-![UI3](images\Wireframes01.jpg)
+<p align="center">
+  <img alt="UI3" src="https://github.com/AlMuhannaMH/Warehouse-Solution/blob/master/src/images/UI02.png">
+</p>
 
-The design is responsive to mobile devices also.
+The material Request Ordr History and the update material request order
 
-![UI4](images\Wireframes01.jpg)
+<p align="center">
+  <img alt="UI4" src="https://github.com/AlMuhannaMH/Warehouse-Solution/blob/master/src/images/UI03.png">
+</p>
 
+The Help page.
+
+<p align="center">
+  <img alt="UI5" src="https://github.com/AlMuhannaMH/Warehouse-Solution/blob/master/src/images/UI04.png">
+</p>
 
 ---
 
